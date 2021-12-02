@@ -1,0 +1,88 @@
+{
+  "configurations": [
+    {
+      "name": "Run Last Day / Last Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "run"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run Last Day / Specific Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "run", "--part=${input:part}"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run Specific Day / Last Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "run", "--day=${input:day}"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run Specific Day / Specific Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "run", "--day=${input:day}", "--part=${input:part}"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Info Last Day / Last Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "info"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Info Last Day / Specific Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "info", "--part=${input:part}"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Info Specific Day / Last Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "info", "--day=${input:day}"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Info Specific Day / Specific Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "info", "--day=${input:day}", "--part=${input:part}"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+  ],
+  "inputs": [
+    {
+      "id": "day",
+      "description": "Which day do you want to run?",
+      "type": "promptString"
+    },
+    {
+      "id": "part",
+      "description": "Which part of the day do you want to run?",
+      "type": "promptString"
+    }
+  ]
+}
