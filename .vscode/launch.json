@@ -1,36 +1,36 @@
 {
   "configurations": [
     {
-      "name": "Run Last Day / Last Part",
+      "name": "Solve Last Day / Last Part",
       "request": "launch",
-      "runtimeArgs": ["start", "--", "run"],
+      "runtimeArgs": ["start", "--", "solve"],
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
       "console": "integratedTerminal"
     },
     {
-      "name": "Run Last Day / Specific Part",
+      "name": "Solve Last Day / Specific Part",
       "request": "launch",
-      "runtimeArgs": ["start", "--", "run", "--part=${input:part}"],
+      "runtimeArgs": ["start", "--", "solve", "--part=${input:part}"],
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
       "console": "integratedTerminal"
     },
     {
-      "name": "Run Specific Day / Last Part",
+      "name": "Solve Specific Day / Last Part",
       "request": "launch",
-      "runtimeArgs": ["start", "--", "run", "--day=${input:day}"],
+      "runtimeArgs": ["start", "--", "solve", "--day=${input:day}"],
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
       "console": "integratedTerminal"
     },
     {
-      "name": "Run Specific Day / Specific Part",
+      "name": "Solve Specific Day / Specific Part",
       "request": "launch",
-      "runtimeArgs": ["start", "--", "run", "--day=${input:day}", "--part=${input:part}"],
+      "runtimeArgs": ["start", "--", "solve", "--day=${input:day}", "--part=${input:part}"],
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
@@ -76,12 +76,12 @@
   "inputs": [
     {
       "id": "day",
-      "description": "Which day do you want to run?",
+      "description": "Enter the day number",
       "type": "promptString"
     },
     {
       "id": "part",
-      "description": "Which part of the day do you want to run?",
+      "description": "Enter the part number",
       "type": "promptString"
     }
   ]

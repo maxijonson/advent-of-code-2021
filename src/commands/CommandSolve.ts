@@ -15,9 +15,9 @@ type Arguments = {
     part?: number;
 };
 
-class CommandRun extends Command<Arguments> {
+class CommandSolve extends Command<Arguments> {
     constructor() {
-        super("run [day] [part]", "Runs a challenge for a specific day/part.", {
+        super("solve [day] [part]", "Solves a challenge for a specific day/part.", {
             day: {
                 description: "The day of the challenge",
                 defaultDescription: `Last day (${LAST_DAY})`,
@@ -95,4 +95,4 @@ class CommandRun extends Command<Arguments> {
     }
 }
 
-export default CommandRun;
+export default CommandSolve;
