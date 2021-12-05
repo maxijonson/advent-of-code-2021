@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-My solutions to some of the challenges of AoC 2021.
+My solutions to some of the challenges of [AoC 2021](https://adventofcode.com/2021).
 
 ## Usage
 
