@@ -72,6 +72,24 @@
       "type": "pwa-node",
       "console": "integratedTerminal"
     },
+    {
+      "name": "Create Day",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "create", "--day=${input:day}"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Create Next Part",
+      "request": "launch",
+      "runtimeArgs": ["start", "--", "create"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "console": "integratedTerminal"
+    },
   ],
   "inputs": [
     {

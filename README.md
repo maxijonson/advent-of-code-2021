@@ -34,6 +34,20 @@ npm start info --day=1           # Show info for day 1 last part
 npm start info --part=1          # Show info for last day part 1
 ```
 
+### Create a new challenge folder
+
+Creates a new folder for a specified day. Default day is the last day in the `days` folder.
+- If the day does not already exist, the first part will be created.
+- If the day already exists, the next part will be created.
+
+```bash
+npm start -- create [--day=<day>]
+
+# Examples
+npm start create --day=1  # Create day 1 and part 1 folders
+npm start create          # Create part-2 folder for day 1
+```
+
 ## Challenge structure
 
 In order for the `solve` command to work out of the box, this is the imposed structure:

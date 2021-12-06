@@ -1,6 +1,8 @@
 import yargs from "yargs";
 
-abstract class Command<A extends { [key: string]: string | number | boolean }> {
+type ArgumentType = string | number | boolean;
+
+abstract class Command<A extends { [key: string]: ArgumentType } = Record<string, ArgumentType>> {
     constructor(
         public name: string,
         public description: string,
