@@ -1,21 +1,30 @@
-export default (input: string) => {
-    const positions = input
-        .split(",")
-        .map(Number)
-        .sort((a, b) => a - b);
-    const median = positions[Math.floor(positions.length / 2)];
+export const getMinFuelCost = (positions: number[], getFuelCost: (distance: number) => number) => {
+    let minFuelCost = Infinity;
+    const min = Math.min(...positions);
+    const max = Math.max(...positions);
 
-    let fuel = 0;
-    for (let i = 0; i < positions.length; i++) {
-        while (positions[i] !== median) {
-            if (positions[i] > median) {
-                positions[i]--;
-            } else {
-                positions[i]++;
+    for (let tempTarget = min; tempTarget <= max; tempTarget++) {
+        let currentFuelCost = 0;
+
+        for (let i = 0; i < positions.length; i++) {
+            currentFuelCost += getFuelCost(Math.abs(tempTarget - positions[i]));
+
+            if (currentFuelCost > minFuelCost) {
+                break;
             }
-            fuel++;
+        }
+
+        if (currentFuelCost < minFuelCost) {
+            minFuelCost = currentFuelCost;
         }
     }
 
-    return fuel.toString();
+    return minFuelCost;
+}
+
+const getFuelCost = (distance: number) => distance;
+
+export default (input: string) => {
+    const positions = input.split(",").map(Number);
+    return getMinFuelCost(positions, getFuelCost).toString();
 };

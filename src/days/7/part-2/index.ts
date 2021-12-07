@@ -15,29 +15,12 @@
  * fuelCost = (n * (n + 1)) / 2
  */
 
+import { getMinFuelCost } from "../part-1";
+
 const getFuelCost = (distance: number): number =>
     (distance * (distance + 1)) / 2;
 
 export default (input: string) => {
     const positions = input.split(",").map(Number);
-
-    let minFuelCost = Infinity;
-
-    for (let tempTarget = Math.min(...positions); tempTarget <= Math.max(...positions); tempTarget++) {
-        let currentFuelCost = 0;
-
-        for (let i = 0; i < positions.length; i++) {
-            currentFuelCost += getFuelCost(Math.abs(positions[i] - tempTarget));
-
-            if (currentFuelCost > minFuelCost) {
-                break;
-            }
-        }
-
-        if (currentFuelCost < minFuelCost) {
-            minFuelCost = currentFuelCost;
-        }
-    }
-
-    return minFuelCost.toString();
+    return getMinFuelCost(positions, getFuelCost).toString();
 };
